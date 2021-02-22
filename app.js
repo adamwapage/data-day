@@ -74,11 +74,15 @@ document.getElementById('day').innerHTML = dayName;
 document.getElementById('date').innerHTML = date;
 document.getElementById('year').innerHTML = year;
 
-const hours = new Date().getHours();
-const minutes = new Date().getMinutes();
-const seconds = new Date().getSeconds();
+function getTime() {
+  const hours = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  const seconds = new Date().getSeconds();
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+}
 
-
-document.getElementById('hours').innerHTML = hours;
-document.getElementById('minutes').innerHTML = minutes;
-document.getElementById('seconds').innerHTML = seconds;
+setInterval(() => {
+  getTime();
+}, 500);
